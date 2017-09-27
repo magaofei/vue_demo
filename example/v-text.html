@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-text & v-html</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-text & v-html</h1>
+	<hr>
+	<div id="app">
+		<span>{{ message }}</span> <span v-text="message"></span>
+		<br/>
+		<span>{{ dodo }}</span> <span v-text="dodo"></span>
+		<span v-html="dodo"></span>
+		<!-- v-html 不安全少用 -->
+	</div>
+	<script type="text/javascript">
+		// import Vue from "../node_modules/vue/dist/vue.js";
+		vue = new Vue({
+			el: '#app',
+			data: {
+				message: "Hello World!",
+				dodo: "<h2>Hello World</h2>"
+			}
+		})
+	</script>
+
+</body>
+</html>
