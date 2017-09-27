@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-bind实例</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-bind实例</h1>
+	<hr>
+	<div id="app">
+		{{ message }}
+	</div>
+	<script type="text/javascript">
+		// import Vue from "../node_modules/vue/dist/vue.js";
+		vue = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello World!'
+			}
+		})
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-model实例</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-model实例</h1>
+	<hr>
+	<div id="app">
+		<p>原始文本信息: {{ message }}</p>
+		<h3>文本框</h3>
+		<p>v-model:<input type="text" v-model="message" name=""></p>
+		<p>v-model.lazy:<input type="text" v-model.lazy="message" name=""></p>
+		<p>v-model.number:<input type="text" v-model.number="message" name=""></p>
+		<p>v-model.trim:<input type="text" v-model.trim="message" name=""></p>
+		<hr>
+		<h3>文本域</h3>
+		<textarea cols="30" rows="10" v-model="message"></textarea>
+		<h3>多选框绑定一个值</h3>
+		<input type="checkbox" id="isTrue" v-model="isTrue" name="">
+		<label for="isTrue">{{isTrue}}</label>
+		<p>
+			<h3>多选框绑定数组</h3>
+			<input type="checkbox" id="jspang" v-model="webnames" value="jspang" name="">
+			<label for="jspang">jspang</label>
+
+			<input type="checkbox" id="panda" v-model="webnames" value="panda" name="">
+			<label for="panda">panda</label>
+
+			<input type="checkbox" id="panpan" v-model="webnames" value="panpan" name="">
+			<label for="panpan">panpan</label>
+		</p>
+
+		<p>
+			<h3>单选框绑定</h3>
+			<input type="radio" id="one" value="male" v-model="sex" name="">
+			<label for="one">male</label>
+
+			<input type="radio" id="one" value="female" v-model="sex" name="">
+			<label for="one">female</label>
+			<p>你选择的性别是： {{sex}}</p>
+		</p>
+
+		<p>{{webnames}}</p>
+	</div>
+	<script type="text/javascript">
+		// import Vue from "../node_modules/vue/dist/vue.js";
+		vue = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello World!',
+				isTrue: true,
+				webnames: [],
+				sex: "male"
+				
+			}
+		})
+	</script>
+
+</body>
+</html>
