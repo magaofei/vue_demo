@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueDerective</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>VueDerective</h1>
+	<hr>
+	<div v-jspang id="app">
+		{{ num }}
+		<button @click="add">ADD</button>
+
+	</div>
+	<script type="text/javascript">
+		// import Vue from "../node_modules/vue/dist/vue.js";
+		Vue.directive('jspang', {
+			// 被绑定
+			bind: function(el, binding) {   
+				console.log("1, bind");
+				console.log(el, binding);
+			},
+
+			// 绑定到节点
+			inserted: function() {
+				console.log("2, inserted");
+			},
+
+			// 更新
+			update: function() {
+				console.log("3, update");
+			},
+
+			// 组件更新完成
+			componentUpdated: function() {
+				console.log("4, componentUpdated");
+			},
+
+			// 解除绑定
+			unbind: function() {
+				console.log("unbind");
+			}
+		})
+
+		vue = new Vue({
+			el: '#app',
+			data: {
+				message: 'Hello World!',
+				num: 1
+			},
+			methods: {
+				add: function() {
+					this.num++;
+				}
+			}
+
+		})
+	</script>
+
+</body>
+</html>
